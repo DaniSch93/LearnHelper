@@ -11,7 +11,7 @@ namespace LearnHelper.data
     public class Database
     {
 
-        private ArrayList elementList;
+        public ArrayList elementList { get; private set; }
 
         public Database()
         {

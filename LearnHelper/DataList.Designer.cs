@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listData = new System.Windows.Forms.ListView();
+            this.listBoxData = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // listData
+            // listBoxData
             // 
-            this.listData.Location = new System.Drawing.Point(31, 32);
-            this.listData.Name = "listData";
-            this.listData.Size = new System.Drawing.Size(683, 589);
-            this.listData.TabIndex = 0;
-            this.listData.UseCompatibleStateImageBehavior = false;
+            this.listBoxData.FormattingEnabled = true;
+            this.listBoxData.Location = new System.Drawing.Point(35, 30);
+            this.listBoxData.Name = "listBoxData";
+            this.listBoxData.Size = new System.Drawing.Size(612, 602);
+            this.listBoxData.TabIndex = 0;
             // 
             // DataList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 673);
-            this.Controls.Add(this.listData);
+            this.Controls.Add(this.listBoxData);
             this.Name = "DataList";
             this.Text = "DataList";
             this.ResumeLayout(false);
@@ -53,6 +53,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listData;
+        private System.Windows.Forms.ListBox listBoxData;
     }
 }
