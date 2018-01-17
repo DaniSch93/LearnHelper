@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using LearnHelper.data;
 using LearnHelper.control;
 
@@ -22,6 +23,9 @@ namespace LearnHelper
             InitializeComponent();
             datab = new Database();
             control = new Controller(this.datab);
+
+            if (File.Exists("database.learnhelper"))
+                this.datab.ReadDataFromFile();
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)

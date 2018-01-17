@@ -25,6 +25,5 @@ namespace LearnHelper
         {
             this.contr.Add(questionBox.Text, answerBox.Text, topicBox.Text);
         }
-
     }
 }
