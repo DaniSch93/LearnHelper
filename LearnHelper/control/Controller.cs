@@ -43,9 +43,9 @@ namespace LearnHelper.control
             
         }
 
-        public void Remove(int id)
+        public void Remove(string topic, string question)
         {
-            
+            this.data.RemoveElement(topic, question);   
         }
 
         public void CreateAddWindow()

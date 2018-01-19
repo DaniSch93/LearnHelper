@@ -42,8 +42,12 @@ namespace LearnHelper
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            // listViewData.SelectedItems.
-            //this.contr.Remove()
+            foreach (ListViewItem item in listViewData.SelectedItems)
+            {
+                this.contr.Remove(item.Text, item.SubItems[1].Text);
+                item.Remove();
+            }
+
         }
 
     }

@@ -23,9 +23,6 @@ namespace LearnHelper
             InitializeComponent();
             datab = new Database();
             control = new Controller(this.datab);
-
-            if (File.Exists("database.learnhelper"))
-                this.datab.ReadDataFromFile();
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)

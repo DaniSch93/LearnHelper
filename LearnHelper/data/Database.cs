@@ -16,7 +16,8 @@ namespace LearnHelper.data
         public Database()
         {
             elementList = new ArrayList();
-            // read in files to list
+            if (File.Exists("database.learnhelper"))
+                this.ReadDataFromFile();
         }
 
         public void AddElement(string question, string answer, string topic)
@@ -29,6 +30,21 @@ namespace LearnHelper.data
 
             Element el = new Element(question, answer, topic, elementList.Count + 1);
             elementList.Add(el);
+        }
+
+        public void RemoveElement(string topic, string question)
+        {
+            foreach (Element e in this.elementList)
+            {
+                if (topic.Equals(e.topic))
+                {
+                    if (question.Equals(e.question))
+                    {
+                        this.elementList.Remove(e);
+                        return;
+                    }
+                }
+            }
         }
 
         public void WriteDataToFile()
