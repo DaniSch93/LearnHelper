@@ -25,8 +25,25 @@ namespace LearnHelper
 
         private void createMyList()
         {
-            foreach (Element item in this.contr.data.elementList)
-                listBoxData.Items.Add(item.question + "    ;    " + item.topic);
+            foreach (Element elem in this.contr.data.elementList)
+                this.addToList(elem.topic, elem.question);
+        }
+
+        public void addToList(string topic, string question)
+        {
+            this.listViewData.Items.Add(new ListViewItem(new string[] { topic, question }));
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            this.contr.CreateAddWindow();
+            this.contr.addWin.Show();
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            // listViewData.SelectedItems.
+            //this.contr.Remove()
         }
 
     }

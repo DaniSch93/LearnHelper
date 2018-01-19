@@ -11,7 +11,7 @@ namespace LearnHelper.control
 {
     public class Controller
     {
-        public Database data { get; set;}
+        public Database data { get; private set;}
         public AddWindow addWin { get; set; }
         public DataList dataList { get; set; }
 
@@ -26,6 +26,11 @@ namespace LearnHelper.control
             {
                 this.data.AddElement(question, answer, topic);
                 this.addWin.Close();
+                if (this.dataList != null)
+                {
+                    this.dataList.addToList(topic, question);
+                    this.dataList.Refresh();
+                }
             }
             catch (NullReferenceException e)
             {
@@ -35,6 +40,11 @@ namespace LearnHelper.control
             {
                 MessageBox.Show("Frage, Antwort und Thema dürfen nicht leer sein und kein Semikolon enthalten!");
             }
+            
+        }
+
+        public void Remove(int id)
+        {
             
         }
 

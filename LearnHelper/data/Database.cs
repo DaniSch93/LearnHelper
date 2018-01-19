@@ -27,7 +27,7 @@ namespace LearnHelper.data
             if (question.Contains(";") || answer.Contains(";") || topic.Contains(";"))
                 throw new DatabaseFailureException("Text cannot contain a semicolon!");
 
-            Element el = new Element(question, answer, topic);
+            Element el = new Element(question, answer, topic, elementList.Count + 1);
             elementList.Add(el);
         }
 
@@ -55,12 +55,14 @@ namespace LearnHelper.data
 
                     // Read the stream to a string, and write the string to the console.
                     string line = sr.ReadLine();
+                    int i = 1;
 
                     while (line != null)
                     {
                         string[] splitted = line.Split(';');
-                        elementList.Add(new Element(splitted[0], splitted[1], splitted[2]));
+                        elementList.Add(new Element(splitted[0], splitted[1], splitted[2], i));
                         line = sr.ReadLine();
+                        i++;
                     }
                 }
             }
