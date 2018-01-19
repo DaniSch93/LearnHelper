@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LearnHelper.control;
+using LearnHelper.data;
 
 namespace LearnHelper
 {
@@ -19,11 +20,21 @@ namespace LearnHelper
         {
             InitializeComponent();
             this.contr = control;
+            setDropdownTopics();
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            this.contr.Add(questionBox.Text, answerBox.Text, topicBox.Text);
+            this.contr.Add(questionBox.Text, answerBox.Text, comboBoxTopic.Text);
+        }
+
+        private void setDropdownTopics()
+        {
+            foreach (Element e in this.contr.data.elementList)
+            {
+                if (!comboBoxTopic.Items.Contains(e.topic))
+                    comboBoxTopic.Items.Add(e.topic);
+            }
         }
     }
 }

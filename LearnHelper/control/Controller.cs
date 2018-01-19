@@ -14,6 +14,7 @@ namespace LearnHelper.control
         public Database data { get; private set;}
         public AddWindow addWin { get; set; }
         public DataList dataList { get; set; }
+        private Element curElem;
 
         public Controller(Database data)
         {
@@ -60,7 +61,16 @@ namespace LearnHelper.control
 
         public string GetNewQuestion()
         {
-            return "hi";
+            Random rnd = new Random();
+
+            int number = rnd.Next(1, this.data.elementList.Count);
+            curElem = (Element) this.data.elementList[number];
+            return curElem.question;
+        }
+
+        public string ShowAnswer()
+        {
+            return curElem.answer;
         }
     }
 }

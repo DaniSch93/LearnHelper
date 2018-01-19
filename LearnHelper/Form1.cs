@@ -44,7 +44,42 @@ namespace LearnHelper
 
         private void buttonGet_Click(object sender, EventArgs e)
         {
+            // reset Answer Box
+            textBoxAnswer.Text = "";
             textBoxQuestion.Text = this.control.GetNewQuestion();
+        }
+
+        private void buttonShow_Click(object sender, EventArgs e)
+        {
+            textBoxAnswer.Text = this.control.ShowAnswer();
+        }
+
+        private void buttonCorrect_Click(object sender, EventArgs e)
+        {
+            // only increment when answer is shown and text box not empty
+            if (textBoxQuestion.Text != "" && textBoxAnswer.Text != "")
+            {
+                int i = Convert.ToInt32(labelCorrect.Text);
+                i++;
+                labelCorrect.Text = Convert.ToString(i);
+
+                textBoxAnswer.Text = "";
+                textBoxQuestion.Text = this.control.GetNewQuestion();
+            }
+        }
+
+        private void buttonIncorrect_Click(object sender, EventArgs e)
+        {
+            // only increment when answer is shown and text box not empty
+            if (textBoxQuestion.Text != "" && textBoxAnswer.Text != "")
+            {
+                int i = Convert.ToInt32(labelIncorrect.Text);
+                i++;
+                labelIncorrect.Text = Convert.ToString(i);
+
+                textBoxAnswer.Text = "";
+                textBoxQuestion.Text = this.control.GetNewQuestion();
+            }
         }
     }
 }
