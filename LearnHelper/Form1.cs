@@ -23,6 +23,13 @@ namespace LearnHelper
             InitializeComponent();
             datab = new Database();
             control = new Controller(this.datab);
+            setDropdownTopics();
+        }
+
+        private void setDropdownTopics()
+        {
+            foreach (string s in this.control.getDropdownTopics())
+                comboBoxTopics.Items.Add(s);
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,7 +53,15 @@ namespace LearnHelper
         {
             // reset Answer Box
             textBoxAnswer.Text = "";
-            textBoxQuestion.Text = this.control.GetNewQuestion();
+            try
+            {
+                textBoxQuestion.Text = this.control.GetNewQuestion(comboBoxTopics.Text);
+            }
+            catch (ControlFailureException ex)
+            {
+                MessageBox.Show("Please choose a topic");
+            }
+            
         }
 
         private void buttonShow_Click(object sender, EventArgs e)
@@ -64,7 +79,15 @@ namespace LearnHelper
                 labelCorrect.Text = Convert.ToString(i);
 
                 textBoxAnswer.Text = "";
-                textBoxQuestion.Text = this.control.GetNewQuestion();
+                try
+                {
+                    textBoxQuestion.Text = this.control.GetNewQuestion(comboBoxTopics.Text);
+                }
+                catch(ControlFailureException ex)
+                {
+                    MessageBox.Show("Please choose a topic");
+                }
+                
             }
         }
 
@@ -78,7 +101,16 @@ namespace LearnHelper
                 labelIncorrect.Text = Convert.ToString(i);
 
                 textBoxAnswer.Text = "";
-                textBoxQuestion.Text = this.control.GetNewQuestion();
+                try
+                {
+                    textBoxQuestion.Text = this.control.GetNewQuestion(comboBoxTopics.Text);
+                } 
+                catch (ControlFailureException ex)
+                {
+                    MessageBox.Show("Please choose a topic");
+                }
+
+                
             }
         }
     }

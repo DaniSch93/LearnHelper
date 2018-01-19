@@ -30,11 +30,8 @@ namespace LearnHelper
 
         private void setDropdownTopics()
         {
-            foreach (Element e in this.contr.data.elementList)
-            {
-                if (!comboBoxTopic.Items.Contains(e.topic))
-                    comboBoxTopic.Items.Add(e.topic);
-            }
+            foreach (string s in this.contr.getDropdownTopics())
+                comboBoxTopic.Items.Add(s);
         }
     }
 }

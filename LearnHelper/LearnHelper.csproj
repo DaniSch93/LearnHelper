@@ -50,6 +50,7 @@
     <Compile Include="AddWindow.Designer.cs">
       <DependentUpon>AddWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="control\ControlFailureException.cs" />
     <Compile Include="control\Controller.cs" />
     <Compile Include="DataList.cs">
       <SubType>Form</SubType>

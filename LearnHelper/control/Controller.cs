@@ -59,18 +59,41 @@ namespace LearnHelper.control
             this.dataList = new DataList(this);
         }
 
-        public string GetNewQuestion()
+        public string GetNewQuestion(string topic)
         {
             Random rnd = new Random();
 
-            int number = rnd.Next(1, this.data.elementList.Count);
-            curElem = (Element) this.data.elementList[number];
+            if (topic.Equals("None"))
+            {
+                throw new ControlFailureException("topic is empty");
+            }
+
+
+            do
+            {
+                int number = rnd.Next(1, this.data.elementList.Count);
+                curElem = (Element)this.data.elementList[number];
+            } while (!curElem.topic.Equals(topic));
+
             return curElem.question;
         }
 
         public string ShowAnswer()
         {
             return curElem.answer;
+        }
+
+        public string[] getDropdownTopics()
+        {
+            var topics = new List<String>();
+
+            foreach (Element e in this.data.elementList)
+            {
+                if (!topics.Contains(e.topic))
+                    topics.Add(e.topic);
+            }
+
+            return topics.ToArray();
         }
     }
 }

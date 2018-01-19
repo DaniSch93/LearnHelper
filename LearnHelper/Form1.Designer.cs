@@ -48,6 +48,8 @@
             this.labelCorrect = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.labelIncorrect = new System.Windows.Forms.Label();
+            this.comboBoxTopics = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +125,7 @@
             // 
             // buttonGet
             // 
-            this.buttonGet.Location = new System.Drawing.Point(646, 102);
+            this.buttonGet.Location = new System.Drawing.Point(646, 143);
             this.buttonGet.Name = "buttonGet";
             this.buttonGet.Size = new System.Drawing.Size(127, 44);
             this.buttonGet.TabIndex = 4;
@@ -223,11 +225,31 @@
             this.labelIncorrect.TabIndex = 14;
             this.labelIncorrect.Text = "0";
             // 
+            // comboBoxTopics
+            // 
+            this.comboBoxTopics.FormattingEnabled = true;
+            this.comboBoxTopics.Location = new System.Drawing.Point(646, 116);
+            this.comboBoxTopics.Name = "comboBoxTopics";
+            this.comboBoxTopics.Size = new System.Drawing.Size(126, 21);
+            this.comboBoxTopics.TabIndex = 15;
+            this.comboBoxTopics.Text = "None";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(643, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Topic";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 610);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboBoxTopics);
             this.Controls.Add(this.labelIncorrect);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelCorrect);
@@ -273,6 +295,8 @@
         private System.Windows.Forms.Label labelCorrect;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelIncorrect;
+        private System.Windows.Forms.ComboBox comboBoxTopics;
+        private System.Windows.Forms.Label label5;
     }
 }
 
