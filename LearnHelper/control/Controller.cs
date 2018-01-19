@@ -57,5 +57,10 @@ namespace LearnHelper.control
         {
             this.dataList = new DataList(this);
         }
+
+        public string GetNewQuestion()
+        {
+            return "hi";
+        }
     }
 }

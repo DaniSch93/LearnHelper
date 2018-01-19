@@ -23,7 +23,7 @@ namespace LearnHelper.data
         public void AddElement(string question, string answer, string topic)
         {
             if (question == "" || answer == "" || topic == "")
-                throw new DatabaseFailureException("Error, please fill in question, answer and topic");
+                throw new DatabaseFailureException("Please fill in question, answer and topic");
 
             if (question.Contains(";") || answer.Contains(";") || topic.Contains(";"))
                 throw new DatabaseFailureException("Text cannot contain a semicolon!");

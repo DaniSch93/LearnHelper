@@ -41,5 +41,10 @@ namespace LearnHelper
             this.control.CreateDataList();
             this.control.dataList.Show();
         }
+
+        private void buttonGet_Click(object sender, EventArgs e)
+        {
+            textBoxQuestion.Text = this.control.GetNewQuestion();
+        }
     }
 }

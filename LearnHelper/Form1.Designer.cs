@@ -32,9 +32,12 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxQuestion = new System.Windows.Forms.RichTextBox();
+            this.buttonGet = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,9 +67,16 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.databaseToolStripMenuItem.Text = "Database";
+            this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -83,18 +93,42 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // databaseToolStripMenuItem
+            // label1
             // 
-            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.databaseToolStripMenuItem.Text = "Database";
-            this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(44, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Question";
+            // 
+            // textBoxQuestion
+            // 
+            this.textBoxQuestion.Location = new System.Drawing.Point(44, 102);
+            this.textBoxQuestion.Name = "textBoxQuestion";
+            this.textBoxQuestion.ReadOnly = true;
+            this.textBoxQuestion.Size = new System.Drawing.Size(574, 144);
+            this.textBoxQuestion.TabIndex = 3;
+            this.textBoxQuestion.Text = "";
+            // 
+            // buttonGet
+            // 
+            this.buttonGet.Location = new System.Drawing.Point(646, 102);
+            this.buttonGet.Name = "buttonGet";
+            this.buttonGet.Size = new System.Drawing.Size(122, 47);
+            this.buttonGet.TabIndex = 4;
+            this.buttonGet.Text = "Get";
+            this.buttonGet.UseVisualStyleBackColor = true;
+            this.buttonGet.Click += new System.EventHandler(this.buttonGet_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 610);
+            this.Controls.Add(this.buttonGet);
+            this.Controls.Add(this.textBoxQuestion);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainWindow";
@@ -114,6 +148,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox textBoxQuestion;
+        private System.Windows.Forms.Button buttonGet;
     }
 }
 
