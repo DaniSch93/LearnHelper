@@ -67,13 +67,8 @@ namespace LearnHelper.control
             {
                 throw new ControlFailureException("topic is empty");
             }
-
-
-            do
-            {
-                int number = rnd.Next(1, this.data.elementList.Count);
-                curElem = (Element)this.data.elementList[number];
-            } while (!curElem.topic.Equals(topic));
+            int number = rnd.Next(0, this.GetListOfTopic(topic).Length - 1);
+            curElem = (Element)this.GetListOfTopic(topic)[number];
 
             return curElem.question;
         }
@@ -83,7 +78,7 @@ namespace LearnHelper.control
             return curElem.answer;
         }
 
-        public string[] getDropdownTopics()
+        public string[] GetDropdownTopics()
         {
             var topics = new List<String>();
 
@@ -95,5 +90,20 @@ namespace LearnHelper.control
 
             return topics.ToArray();
         }
+
+        private Element[] GetListOfTopic(string topic)
+        {
+            var list = new List<Element>();
+
+            foreach (Element e in this.data.elementList)
+            {
+                if (e.topic.Equals(topic))
+                    list.Add(e);
+            }
+            return list.ToArray();
+
+        }
+
+
     }
 }

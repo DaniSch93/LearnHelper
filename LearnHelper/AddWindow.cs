@@ -20,7 +20,7 @@ namespace LearnHelper
         {
             InitializeComponent();
             this.contr = control;
-            setDropdownTopics();
+            SetDropdownTopics();
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -28,9 +28,9 @@ namespace LearnHelper
             this.contr.Add(questionBox.Text, answerBox.Text, comboBoxTopic.Text);
         }
 
-        private void setDropdownTopics()
+        private void SetDropdownTopics()
         {
-            foreach (string s in this.contr.getDropdownTopics())
+            foreach (string s in this.contr.GetDropdownTopics())
                 comboBoxTopic.Items.Add(s);
         }
     }

@@ -23,12 +23,12 @@ namespace LearnHelper
             InitializeComponent();
             datab = new Database();
             control = new Controller(this.datab);
-            setDropdownTopics();
+            SetDropdownTopics();
         }
 
-        private void setDropdownTopics()
+        private void SetDropdownTopics()
         {
-            foreach (string s in this.control.getDropdownTopics())
+            foreach (string s in this.control.GetDropdownTopics())
                 comboBoxTopics.Items.Add(s);
         }
 
