@@ -22,14 +22,18 @@ namespace LearnHelper
         {
             InitializeComponent();
             datab = new Database();
-            control = new Controller(this.datab);
+            control = new Controller(this.datab, this);
             SetDropdownTopics();
         }
 
-        private void SetDropdownTopics()
+        public void SetDropdownTopics()
         {
             foreach (string s in this.control.GetDropdownTopics())
-                comboBoxTopics.Items.Add(s);
+            {
+                if (!comboBoxTopics.Items.Contains(s))
+                    comboBoxTopics.Items.Add(s);
+            }
+                
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)

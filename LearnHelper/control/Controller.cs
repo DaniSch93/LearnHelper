@@ -15,10 +15,12 @@ namespace LearnHelper.control
         public AddWindow addWin { get; set; }
         public DataList dataList { get; set; }
         private Element curElem;
+        private MainWindow mainWin;
 
-        public Controller(Database data)
+        public Controller(Database data, MainWindow mainWin)
         {
             this.data = data;
+            this.mainWin = mainWin;
         }
 
         public void Add(string question, string answer, string topic)
@@ -26,6 +28,7 @@ namespace LearnHelper.control
             try
             {
                 this.data.AddElement(question, answer, topic);
+                this.mainWin.SetDropdownTopics();
                 this.addWin.Close();
                 if (this.dataList != null)
                 {
